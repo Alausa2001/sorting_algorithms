@@ -1,3 +1,4 @@
+#include <stddef.h>
 #include "sort.h"
 /**
  * insertion_sort_list - This function performs a sort
@@ -7,7 +8,7 @@
  */
 void insertion_sort_list(listint_t **list)
 {
-	int *temp = *list;
+	listint_t *temp = *list;
 	int store;
 
 	while (temp->next != NULL)
@@ -19,7 +20,8 @@ void insertion_sort_list(listint_t **list)
 		{
 			temp->next = temp->prev;
 		}
-		temp->next = store;
+		temp = temp->next;
+		temp->n = store;
 	}
 }
 

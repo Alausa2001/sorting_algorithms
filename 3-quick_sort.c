@@ -36,11 +36,11 @@ int partition(int *array, int lower_bound, int upper_bound, size_t size)
 		if (array[j] < pivot)
 		{
 			i++;
-			if (i != j)
+			if (i != j && array[i] != array[j])
 				swap(array, &array[j], &array[i], size);
 		}
 	}
-	if (i + 1 != upper_bound)
+	if (i + 1 != upper_bound && array[i + 1] != array[upper_bound])
 		swap(array, &array[i + 1], &array[upper_bound], size);
 	return (i + 1);
 }

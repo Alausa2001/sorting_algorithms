@@ -40,7 +40,8 @@ int partition(int *array, int lower_bound, int upper_bound, size_t size)
 				swap(array, &array[j], &array[i], size);
 		}
 	}
-	swap(array, &array[i + 1], &array[upper_bound], size);
+	if (i + 1 != upper_bound)
+		swap(array, &array[i + 1], &array[upper_bound], size);
 	return (i + 1);
 }
 
